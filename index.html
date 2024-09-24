@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adventure</title>
     <link rel="icon" href="images/backpack.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
 
@@ -43,9 +44,9 @@
     </div>
 
     <section class="home" id="home">
-      <div class="home-slider">
-        <div class="wrapper">
-          <div class="slide">
+      <div class="swiper home-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
             <div class="box" style="background: url(images/bg-1.jpeg) no-repeat">
               <div class="content">
                 <span>never stop</span>
@@ -56,7 +57,7 @@
             </div>
           </div>
 
-          <div class="slide">
+          <div class="swiper-slide">
             <div class="box second" style="background: url(images/bg-2.jpeg) no-repeat">
               <div class="content">
                 <span>make tour</span>
@@ -67,7 +68,7 @@
             </div>
           </div>
 
-          <div class="slide">
+          <div class="swiper-slide">
             <div class="box" style="background: url(images/bg-3.jpg) no-repeat">
               <div class="content">
                 <span>explore the</span>
@@ -78,9 +79,13 @@
             </div>
           </div>
         </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/db6a41f05b.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body>

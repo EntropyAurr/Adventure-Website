@@ -12,11 +12,12 @@
 }
 
 $green: #25a244;
+$btn: #0ead69;
 $black: #10221b;
 $white: #fff;
 $gray: #f0efef;
 $light-bg: #e7ecef;
-$border: 0.2rem solid $black;
+$border: 0.2rem solid white;
 $box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 
 @mixin grid($val) {
@@ -36,6 +37,21 @@ body {
 }
 section {
   padding: 5rem 9%;
+}
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  cursor: pointer;
+  border: $border;
+  border-radius: 6px;
+  color: $gray;
+  font-size: 1.7rem;
+  background: none;
+  padding: 1rem 3rem;
+
+  &:hover {
+    background: $btn;
+  }
 }
 
 .header {
@@ -87,8 +103,8 @@ section {
       color: $green;
     }
   }
-  .icons div {
-    margin-left: 3rem;
+  .icons a {
+    margin: 0 3rem 0;
   }
 
   #menu-btn {
@@ -203,6 +219,12 @@ section {
   }
 }
 
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 3rem;
+  color: $gray;
+}
+
 /*------- Media Queries -------*/
 @media (max-width: 1200px) {
   section {
@@ -217,6 +239,28 @@ section {
 @media (max-width: 990px) {
   html {
     font-size: 55%;
+  }
+
+  .home .box {
+    padding: 2rem;
+    justify-content: center;
+    background-position: right !important;
+
+    &.second {
+      justify-content: center;
+      background-position: left !important;
+    }
+
+    .content {
+      text-align: center;
+
+      span {
+        font-size: 3rem;
+      }
+      h3 {
+        font-size: 4rem;
+      }
+    }
   }
 }
 
@@ -258,6 +302,11 @@ section {
       }
     }
   }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    display: none;
+  }
 }
 
 @media (max-width: 450px) {
@@ -265,5 +314,3 @@ section {
     font-size: 50%;
   }
 }
-
-/*------- HOME Section -------*/

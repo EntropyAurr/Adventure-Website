@@ -16,3 +16,12 @@ document.getElementById("search-btn").onclick = () => {
 document.getElementById("close-search").onclick = () => {
   searchForm.classList.remove("active");
 };
+
+var swiper = new Swiper(".home-slider", {
+  loop: true,
+  grapCursor: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
