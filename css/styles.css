@@ -181,12 +181,20 @@ section {
   color: #f0efef;
   font-size: 1.5rem;
   padding: 1rem 0;
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 3rem;
   color: #f0efef;
+}
+
+.category .box-container .box img {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
 }
 
 /*------- Media Queries -------*/
