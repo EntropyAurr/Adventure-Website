@@ -17,12 +17,13 @@ $black: #10221b;
 $white: #fff;
 $gray: #f0efef;
 $light-bg: #e7ecef;
-$border: 0.2rem solid white;
+$border-light: 0.2rem solid white;
+$border-dark: 0.2rem solid $green;
 $box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 
 @mixin grid($val) {
   display: grid;
-  grid-template-columns: repeat(autofix, minmax($val, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
   gap: 1.5rem;
 }
 
@@ -39,19 +40,29 @@ section {
   padding: 5rem 9%;
 }
 .btn {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   display: inline-block;
   cursor: pointer;
-  border: $border;
-  border-radius: 6px;
-  color: $gray;
   font-size: 1.7rem;
   background: none;
   padding: 1rem 3rem;
+  border-radius: 6px;
+
+  &.light {
+    border: $border-light;
+    color: $gray;
+  }
 
   &:hover {
     background: $btn;
   }
+}
+
+.heading {
+  text-align: center;
+  font-family: "Baloo Bhai 2";
+  font-size: 4rem;
+  margin-bottom: 2.5rem;
 }
 
 .header {
@@ -216,6 +227,7 @@ section {
         padding: 1rem 0;
         backdrop-filter: blur(20px);
         border-radius: 10px;
+        margin: 1.5rem 0;
       }
     }
   }
@@ -228,12 +240,41 @@ section {
 }
 
 .category {
+  padding-top: 2.5rem;
+
   .box-container {
+    @include grid(24rem);
+
     .box {
+      text-align: center;
+
       img {
         width: 20rem;
         height: 20rem;
         border-radius: 50%;
+        margin-bottom: 1.2rem;
+      }
+
+      h3 {
+        font-size: 2rem;
+        color: $green;
+      }
+
+      p {
+        font-size: 1.4rem;
+        padding: 1rem 0;
+        line-height: 2;
+      }
+
+      .btn {
+        &.dark {
+          border: $border-dark;
+          color: $black;
+
+          &:hover {
+            background: $btn;
+          }
+        }
       }
     }
   }
