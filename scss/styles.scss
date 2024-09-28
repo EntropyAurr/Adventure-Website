@@ -24,7 +24,8 @@ $box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 @mixin grid($val) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
-  gap: 1.5rem;
+  column-gap: 1.5rem;
+  row-gap: 3.5rem;
 }
 
 html {
@@ -62,7 +63,7 @@ section {
   text-align: center;
   font-family: "Baloo Bhai 2";
   font-size: 4rem;
-  margin-bottom: 2.5rem;
+  margin: -4.5rem 0 4.5rem;
 }
 
 .header {
@@ -70,11 +71,15 @@ section {
   top: 0;
   left: 0;
   right: 0;
-  padding: 2rem 9%;
+  padding: 1.8rem 9%;
   z-index: 900;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  &.active {
+    backdrop-filter: blur(30px);
+  }
 
   .logo {
     font-size: 2.5rem;
@@ -88,7 +93,7 @@ section {
   .navbar {
     a {
       margin-left: 2rem;
-      font-size: 1.7rem;
+      font-size: 1.8rem;
       color: $black;
 
       &:hover {
@@ -240,7 +245,7 @@ section {
 }
 
 .category {
-  padding-top: 2.5rem;
+  padding-bottom: 3.5rem;
 
   .box-container {
     @include grid(24rem);
@@ -262,7 +267,7 @@ section {
 
       p {
         font-size: 1.4rem;
-        padding: 1rem 0;
+        padding: 1rem 0 0.7rem;
         line-height: 2;
       }
 
