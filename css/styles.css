@@ -34,19 +34,24 @@ section {
   padding: 1rem 3rem;
   border-radius: 6px;
 }
+.btn:hover {
+  background: #0ead69;
+}
 .btn.light {
   border: 0.2rem solid white;
   color: #f0efef;
 }
-.btn:hover {
-  background: #0ead69;
+.btn.dark {
+  border: 0.2rem solid #25a244;
+  color: #10221b;
 }
 
 .heading {
+  color: #80b918;
   text-align: center;
   font-family: "Baloo Bhai 2";
   font-size: 4rem;
-  margin: -4.5rem 0 4.5rem;
+  margin: 2rem 0 4.5rem;
 }
 
 .header {
@@ -180,11 +185,12 @@ section {
 }
 .home .box .content span {
   font-size: 4rem;
-  color: #10221b;
+  color: #fff;
 }
-.home .box .content h3 {
+.home .box .content h1 {
+  font-family: "Acme";
   font-size: 6rem;
-  color: #25a244;
+  color: #06d6a0;
   padding-top: 0.5rem;
   text-transform: uppercase;
 }
@@ -192,7 +198,7 @@ section {
   line-height: 2;
   color: #f0efef;
   font-size: 1.5rem;
-  padding: 1rem 0;
+  padding: 1rem 0.8rem;
   backdrop-filter: blur(20px);
   border-radius: 10px;
   margin: 1.5rem 0;
@@ -205,20 +211,29 @@ section {
 }
 
 .category {
-  padding-bottom: 3.5rem;
+  padding-bottom: 4.5rem;
+}
+.category h2.heading {
+  margin-top: -4.5rem;
 }
 .category .box-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-  column-gap: 1.5rem;
-  row-gap: 3.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+  gap: 3.5rem;
 }
 .category .box-container .box {
   text-align: center;
+  border: 2px solid #c7c7c7;
+  border-radius: 0.8rem;
+  padding: 1.5rem 0.5rem;
+  cursor: pointer;
+}
+.category .box-container .box:hover {
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
 }
 .category .box-container .box img {
-  width: 20rem;
-  height: 20rem;
+  width: 18rem;
+  height: 18rem;
   border-radius: 50%;
   margin-bottom: 1.2rem;
 }
@@ -231,12 +246,93 @@ section {
   padding: 1rem 0 0.7rem;
   line-height: 2;
 }
-.category .box-container .box .btn.dark {
-  border: 0.2rem solid #25a244;
-  color: #10221b;
+
+.about {
+  background: #e7ecef;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 4rem;
 }
-.category .box-container .box .btn.dark:hover {
-  background: #0ead69;
+.about .image {
+  flex: 1 1 42rem;
+  margin-right: 4rem;
+}
+.about .image img {
+  width: 100%;
+  border-radius: 0.8rem;
+  object-fit: cover;
+  box-shadow: 2rem 2rem 0 rgba(0, 0, 0, 0.2);
+}
+.about .content {
+  flex: 1 1 42rem;
+}
+.about .content h3 {
+  font-size: 3rem;
+  color: #25a244;
+}
+.about .content p {
+  font-size: 1.5rem;
+  line-height: 2;
+  padding: 1rem 0;
+}
+
+.shop .product-slider .slide {
+  border: 0.2rem solid #25a244;
+  border-radius: 0.8rem;
+}
+.shop .product-slider .slide:hover .image .icons {
+  transform: translateY(0);
+}
+.shop .product-slider .slide .image {
+  position: relative;
+  overflow: hidden;
+  height: 30rem;
+  width: 100%;
+}
+.shop .product-slider .slide .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.shop .product-slider .slide .image .icons {
+  width: 100%;
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  text-align: center;
+  z-index: 10;
+  transform: translateY(7rem);
+}
+.shop .product-slider .slide .image .icons a {
+  cursor: pointer;
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  font-size: 1.7rem;
+  margin: 0 0.5rem;
+  border-radius: 0.4rem;
+  background-color: #656565;
+  color: #fff;
+}
+.shop .product-slider .slide .image .icons a:hover {
+  background-color: #55a630;
+}
+.shop .product-slider .slide .content {
+  padding: 1rem 0;
+  text-align: center;
+}
+.shop .product-slider .slide .content h3 {
+  font-size: 2rem;
+}
+.shop .product-slider .slide .content .price {
+  font-size: 2rem;
+  padding: 1rem 0;
+  color: #25a244;
+}
+.shop .product-slider .slide .content .stars i {
+  font-size: 1.7rem;
 }
 
 /*------- Media Queries -------*/
@@ -251,6 +347,7 @@ section {
 @media (max-width: 990px) {
   html {
     font-size: 55%;
+    scroll-padding-top: 7rem;
   }
   .home .box {
     padding: 2rem;
@@ -272,6 +369,10 @@ section {
   }
 }
 @media (max-width: 768px) {
+  .header.active {
+    background-color: rgb(234, 234, 234);
+    backdrop-filter: none;
+  }
   .header #menu-btn {
     display: inline-block;
   }
@@ -290,8 +391,8 @@ section {
     transition: 0.8s linear;
   }
   .header .navbar.active {
-    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
     left: 0;
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
   }
   .header .navbar a {
     margin: 1rem 0;
